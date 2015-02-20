@@ -34,10 +34,14 @@ namespace MyCollections
 
 			if (Count == 0)
 			{
-				First = Last = new MyLinkedListNode<T>();
-				First.Value = Last.Value = item;
-				First.Next = Last.Next = null;
-				First.Previous = Last.Previous = null;
+				First = new MyLinkedListNode<T>();
+				Last = First;
+				First.Value = item;
+				Last.Value = item;
+				First.Next = null;
+				Last.Next = null;
+				First.Previous = null;
+				Last.Previous = null;
 			}
 			else
 			{
@@ -66,10 +70,14 @@ namespace MyCollections
 
 			if (Count == 0)
 			{
-				First = Last = new MyLinkedListNode<T>();
-				First.Value = Last.Value = item;
-				First.Next = Last.Next = null;
-				First.Previous = Last.Previous = null;
+				Last = new MyLinkedListNode<T>();
+				First = Last;
+				First.Value = item;
+				Last.Value = item;
+				First.Next = null;
+				Last.Next = null;
+				First.Previous = null;
+				Last.Previous = null;
 			}
 			else
 			{
@@ -91,7 +99,8 @@ namespace MyCollections
 				throw new NotSupportedException("Collection is read-only");
 			}
 
-			First = Last = null;
+			First = null;
+			Last = null;
 			Count = 0;
 		}
 
@@ -198,7 +207,8 @@ namespace MyCollections
 
 			if (Count == 1)
 			{
-				First = Last = null;
+				First = null;
+				Last = null;
 				Count--;
 				return;
 			}
@@ -226,7 +236,8 @@ namespace MyCollections
 
 			if (Count == 1)
 			{
-				First = Last = null;
+				First = null;
+				Last = null;
 				Count--;
 				return;
 			}
@@ -306,8 +317,10 @@ namespace MyCollections
 
 			if (Count == 0)
 			{
-				First = Last = item;
-				First.Previous = Last.Next = null;
+				First = item;
+				Last = item;
+				First.Previous = null;
+				Last.Next = null;
 			}
 			else
 			{
@@ -334,8 +347,10 @@ namespace MyCollections
 
 			if (Count == 0)
 			{
-				First = Last = item;
-				First.Previous = Last.Next = null;
+				First = item;
+				Last = item;
+				First.Previous = null;
+				Last.Next = null;
 			}
 			else
 			{
