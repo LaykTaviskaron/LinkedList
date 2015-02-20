@@ -1,0 +1,7 @@
+D:\Projects\MyCollections\MyCollectionsTests\bin\Debug\MyCollectionsTests.dll
+D:\Projects\MyCollections\MyCollectionsTests\bin\Debug\MyCollectionsTests.pdb
+D:\Projects\MyCollections\MyCollectionsTests\bin\Debug\MyCollections.exe
+D:\Projects\MyCollections\MyCollectionsTests\bin\Debug\MyCollections.pdb
+D:\Projects\MyCollections\MyCollectionsTests\obj\Debug\MyCollectionsTests.csprojResolveAssemblyReference.cache
+D:\Projects\MyCollections\MyCollectionsTests\obj\Debug\MyCollectionsTests.dll
+D:\Projects\MyCollections\MyCollectionsTests\obj\Debug\MyCollectionsTests.pdb
