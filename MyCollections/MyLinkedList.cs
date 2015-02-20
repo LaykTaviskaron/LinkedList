@@ -100,7 +100,7 @@ namespace MyCollections
 			MyLinkedListNode<T> current = First;
 			while (current != null)
 			{
-				if (current.Value.Equals(item))
+				if (Object.Equals(current.Value, item))
 				{
 					return true;
 				}
@@ -149,13 +149,13 @@ namespace MyCollections
 				return false;
 			}
 
-			if (First.Value.Equals(item))
+			if (Object.Equals(First.Value, item))
 			{
 				RemoveFirst();
 				return true;
 			}
 
-			if (Last.Value.Equals(item))
+			if (Object.Equals(Last.Value, item))
 			{
 				RemoveLast();
 				return true;
@@ -165,7 +165,7 @@ namespace MyCollections
 			
 			while (temp.Next != null)
 			{
-				if (temp.Value.Equals(item))
+				if (Object.Equals(temp.Value, item))
 				{
 					MyLinkedListNode<T> previousNode = temp.Previous;
 					MyLinkedListNode<T> nextNode = temp.Next;
@@ -199,6 +199,7 @@ namespace MyCollections
 			if (Count == 1)
 			{
 				First = Last = null;
+				Count--;
 				return;
 			}
 
@@ -241,16 +242,11 @@ namespace MyCollections
 
 		public MyLinkedListNode<T> Find(T value)
 		{
-			if (value == null)
-			{
-				throw new ArgumentNullException("value");
-			}
-
 			MyLinkedListNode<T> current = First;
 
 			while (current != null)
 			{
-				if (value.Equals(current.Value))
+				if (Object.Equals(current.Value, value))
 				{
 					return current;
 				}
@@ -262,16 +258,11 @@ namespace MyCollections
 
 		public MyLinkedListNode<T> FindLast(T value)
 		{
-			if (value == null)
-			{
-				throw new ArgumentNullException("value");
-			}
-
 			MyLinkedListNode<T> current = Last;
 
 			while (current != null)
 			{
-				if (value.Equals(current.Value))
+				if (Object.Equals(current.Value, value))
 				{
 					return current;
 				}

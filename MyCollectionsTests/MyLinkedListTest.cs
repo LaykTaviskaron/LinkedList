@@ -160,6 +160,9 @@ namespace MyCollectionsTests
 			string input = "kokoko";
 			list.AddFirst(input);
 			list.RemoveFirst();
+
+			Assert.AreEqual(list.Count, 0);
+			Assert.AreEqual(list.First, list.Last);
 		}
 
 		[TestMethod]
@@ -187,6 +190,9 @@ namespace MyCollectionsTests
 			string input = "kokoko";
 			list.AddLast(input);
 			list.RemoveLast();
+
+			Assert.AreEqual(list.Count, 0);
+			Assert.AreEqual(list.First, list.Last);
 		}
 
 		[TestMethod]
@@ -332,20 +338,6 @@ namespace MyCollectionsTests
 			list.AddLast(5);
 
 			list.CopyTo(new int[3], 0);
-		}
-
-		[TestMethod]
-		[ExpectedException(typeof(ArgumentNullException))]
-		public void Find_NullFiven_ArgumentNullExceptionThrown()
-		{
-			(new MyLinkedList<string>()).Find(null);
-		}
-
-		[TestMethod]
-		[ExpectedException(typeof(ArgumentNullException))]
-		public void FindLast_NullFiven_ArgumentNullExceptionThrown()
-		{
-			(new MyLinkedList<string>()).FindLast(null);
 		}
 
 		[TestMethod]

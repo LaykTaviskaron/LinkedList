@@ -3,5 +3,4 @@ D:\Projects\MyCollections\MyCollections\bin\Debug\MyCollections.exe
 D:\Projects\MyCollections\MyCollections\bin\Debug\MyCollections.pdb
 D:\Projects\MyCollections\MyCollections\obj\Debug\MyCollections.exe
 D:\Projects\MyCollections\MyCollections\obj\Debug\MyCollections.pdb
-D:\Projects\MyCollections\MyCollections\bin\Debug\MyCollections.exe.CodeAnalysisLog.xml
-D:\Projects\MyCollections\MyCollections\bin\Debug\MyCollections.exe.lastcodeanalysissucceeded
+D:\Projects\MyCollections\MyCollections\obj\Debug\MyCollections.csprojResolveAssemblyReference.cache
