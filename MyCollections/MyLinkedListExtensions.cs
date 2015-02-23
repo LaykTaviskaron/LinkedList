@@ -5,78 +5,6 @@ namespace MyCollections
 {
 	public static class MyLinkedListExtensions
 	{
-		private static IEnumerable<T> SkipWhileIterator<T>(this IMyLinkedList<T> list, Predicate<T> predicate)
-		{
-			MyLinkedListNode<T> current = list.First;
-
-			while ((current != null) && (predicate(current.Value)))
-			{
-				current = current.Next;
-			}
-
-			while (current != null)
-			{
-				yield return current.Value;
-				current = current.Next;
-			}
-		}
-		
-		private static IEnumerable<T> TakeWhileIterator<T>(this IMyLinkedList<T> list, Predicate<T> predicate)
-		{
-			foreach (var item in list)
-			{
-				if (!predicate(item))
-				{
-					break;
-				}
-
-				yield return item;
-			}
-		}
-
-		private static IEnumerable<TResult> SelectIterator<TSource, TResult>(this IMyLinkedList<TSource> source, Func<TSource, TResult> selector)
-		{
-			foreach (var item in source)
-			{
-				yield return selector(item);
-			}
-		}
-
-		private static IEnumerable<T> ReverseIterator<T>(this IMyLinkedList<T> list)
-		{
-			MyLinkedListNode<T> current = list.Last;
-
-			while (current != null)
-			{
-				yield return current.Value;
-				current = current.Previous;
-			}
-		}
-
-		private static IEnumerable<T> WhereIterator<T>(this IMyLinkedList<T> list, Predicate<T> predicate)
-		{
-			foreach (var item in list)
-			{
-				if (predicate(item))
-				{
-					yield return item;
-				}
-			}
-		}
-
-		private static IEnumerable<T> ConcatIterator<T>(this IMyLinkedList<T> first, IMyLinkedList<T> second)
-		{
-			foreach (var item in first)
-			{
-				yield return item;
-			}
-
-			foreach (var item in second)
-			{
-				yield return item;
-			}
-		}
-
 		public static IEnumerable<T> TakeWhile<T>(this IMyLinkedList<T> list, Predicate<T> predicate)
 		{
 			if (list == null)
@@ -439,6 +367,78 @@ namespace MyCollections
 				}
 
 				current = current.Next;
+			}
+		}
+
+		private static IEnumerable<T> SkipWhileIterator<T>(this IMyLinkedList<T> list, Predicate<T> predicate)
+		{
+			MyLinkedListNode<T> current = list.First;
+
+			while ((current != null) && (predicate(current.Value)))
+			{
+				current = current.Next;
+			}
+
+			while (current != null)
+			{
+				yield return current.Value;
+				current = current.Next;
+			}
+		}
+
+		private static IEnumerable<T> TakeWhileIterator<T>(this IMyLinkedList<T> list, Predicate<T> predicate)
+		{
+			foreach (var item in list)
+			{
+				if (!predicate(item))
+				{
+					break;
+				}
+
+				yield return item;
+			}
+		}
+
+		private static IEnumerable<TResult> SelectIterator<TSource, TResult>(this IMyLinkedList<TSource> source, Func<TSource, TResult> selector)
+		{
+			foreach (var item in source)
+			{
+				yield return selector(item);
+			}
+		}
+
+		private static IEnumerable<T> ReverseIterator<T>(this IMyLinkedList<T> list)
+		{
+			MyLinkedListNode<T> current = list.Last;
+
+			while (current != null)
+			{
+				yield return current.Value;
+				current = current.Previous;
+			}
+		}
+
+		private static IEnumerable<T> WhereIterator<T>(this IMyLinkedList<T> list, Predicate<T> predicate)
+		{
+			foreach (var item in list)
+			{
+				if (predicate(item))
+				{
+					yield return item;
+				}
+			}
+		}
+
+		private static IEnumerable<T> ConcatIterator<T>(this IMyLinkedList<T> first, IMyLinkedList<T> second)
+		{
+			foreach (var item in first)
+			{
+				yield return item;
+			}
+
+			foreach (var item in second)
+			{
+				yield return item;
 			}
 		}
 	}
